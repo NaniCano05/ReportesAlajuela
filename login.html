@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Acceso de usuario y administrador a Reportes Alajuela.">
+  <title>Iniciar sesión | Reportes Alajuela</title>
+  <link rel="icon" href="img/logo-icon.png" type="image/png">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body data-page="login">
+  <!-- Encabezado sencillo para volver al contenido público. -->
+  <header class="encabezado">
+    <a class="marca" href="index.html"><img src="img/logo-icon.png" alt="Logo de Reportes Alajuela"><span>Reportes
+        Alajuela</span></a>
+    <a class="boton boton-claro" href="index.html">Volver al inicio</a>
+  </header>
+
+  <main class="inicio-sesion">
+    <form id="login-form" class="formulario formulario-acceso" novalidate>
+      <p class="etiqueta">Acceso a la plataforma</p>
+      <h1>Iniciar sesión</h1>
+      <p class="ayuda">Ingresa como usuario para enviar reportes o como administrador para revisarlos.</p>
+
+      <div class="campo">
+        <label for="login-user">Usuario administrador o cédula registrada</label>
+        <input id="login-user" name="username" autocomplete="username" required>
+      </div>
+      <div class="campo">
+        <label for="login-password">Contraseña</label>
+        <input id="login-password" name="password" type="password" autocomplete="current-password" required>
+      </div>
+      <p id="login-message" class="resultado" role="status" aria-live="polite"></p>
+      <button class="boton boton-rojo" type="submit">Entrar</button>
+      <p class="ayuda nota-acceso"> Acceso de demostración para el proyecto académico.</p>
+      <p class="enlace-registro">¿Aún no tienes cuenta? <a class="enlace" href="registro.html">Crear una cuenta</a></p>
+      <p class="ayuda"> Al registrarte, aceptas los <a class="enlace" href="terminos.html">términos y condiciones</a>.
+      </p>
+    </form>
+  </main>
+
+  <footer class="pie">
+    <div class="contenedor pie-contenido"><strong>Reportes Alajuela</strong>
+      <p>Infórmate y comparte incidencias con responsabilidad.</p>
+    </div>
+  </footer>
+  <script type="module" src="JavaScript/app.js"></script>
+</body>
+
+</html>

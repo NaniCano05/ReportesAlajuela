@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Crea una cuenta para enviar reportes ciudadanos de Alajuela.">
+  <title>Crear cuenta | Reportes Alajuela</title>
+  <link rel="icon" href="img/logo-icon.png" type="image/png">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body data-page="registro">
+  <!-- Encabezado para volver a la página pública o al inicio de sesión. -->
+  <header class="encabezado">
+    <a class="marca" href="index.html"><img src="img/logo-icon.png" alt="Logo de Reportes Alajuela"><span>Reportes
+        Alajuela</span></a>
+    <a class="boton boton-claro" href="login.html">Iniciar sesión</a>
+  </header>
+
+  <main class="inicio-sesion">
+    <form id="register-form" class="formulario formulario-acceso" novalidate>
+      <p class="etiqueta">Registro de usuario</p>
+      <h1>Crear una cuenta</h1>
+      <p class="ayuda">Usa tus datos para identificar tus envíos y poder iniciar sesión después.</p>
+
+      <div class="campo">
+        <label for="register-name">Nombre</label>
+        <input id="register-name" name="nombre" autocomplete="given-name" maxlength="60" required>
+      </div>
+      <div class="campo">
+        <label for="register-surname">Apellido</label>
+        <input id="register-surname" name="apellido" autocomplete="family-name" maxlength="60" required>
+      </div>
+      <div class="campo">
+        <label for="register-id">Cédula o identificación</label>
+        <input id="register-id" name="cedula" autocomplete="off" inputmode="numeric" minlength="6" maxlength="20"
+          required>
+      </div>
+      <div class="campo">
+        <label for="register-email">Correo electrónico</label>
+        <input id="register-email" name="email" type="email" autocomplete="email" maxlength="120" required
+          aria-describedby="register-email-error">
+        <small id="register-email-error" class="error"></small>
+      </div>
+      <div class="campo">
+        <label for="register-password">Contraseña (mínimo 8 caracteres)</label>
+        <input id="register-password" name="password" type="password" autocomplete="new-password" minlength="8"
+          required>
+      </div>
+      <div class="campo">
+        <label for="register-confirmation">Confirmar contraseña</label>
+        <input id="register-confirmation" name="confirmation" type="password" autocomplete="new-password" required>
+      </div>
+
+      <label class="aceptar-terminos">
+        <input id="accept-terms" name="terms" type="checkbox" required>
+        <a class="enlace" href="terminos.html">términos y condiciones</a>
+      </label>
+      <p id="terms-acceptance-help" class="ayuda" aria-live="polite">Al marcar la casilla, primero podrás revisar y
+        aceptar las condiciones.</p>
+      <p id="register-message" class="resultado" role="status" aria-live="polite"></p>
+      <button class="boton boton-rojo" type="submit">Crear cuenta</button>
+      <p class="ayuda nota-acceso">Proyecto de demostración: no ingreses una cédula ni contraseña que uses en otros
+        servicios.</p>
+    </form>
+  </main>
+
+  <!-- Diálogo de lectura: el código solo habilita Aceptar cuando se llega al final. -->
+  <dialog id="terms-dialog" class="dialogo-terminos" aria-labelledby="terms-dialog-title">
+    <div id="terms-dialog-content" class="contenido-terminos-dialogo" tabindex="0">
+      <article class="texto-terminos">
+        <p class="etiqueta">Participación responsable</p>
+        <h2 class="titulo-dialogo-terminos" id="terms-dialog-title">Términos y condiciones</h2>
+        <p>Reportes Alajuela es una iniciativa académica para compartir incidencias comunitarias de forma clara,
+          respetuosa y útil para las personas de la provincia.</p>
+
+        <h2>Normas para publicar</h2>
+        <ul>
+          <li>Publica información relacionada con una incidencia comunitaria y procura que sea verídica y comprobable.
+          </li>
+          <li>No publiques contenido sexual, explícito o que exponga a personas menores de edad.</li>
+          <li>No se permite el ciberacoso, las amenazas, insultos, humillaciones, discriminación ni mensajes de odio.
+          </li>
+          <li>No compartas violencia gráfica, contenido ilegal, spam, publicidad o información falsa con intención de
+            perjudicar.</li>
+          <li>No incluyas cédulas, teléfonos, direcciones privadas, rostros identificables ni otros datos personales
+            tuyos o de terceros.</li>
+          <li>Usa el servicio con respeto. Para emergencias reales, llama al 9-1-1; el sitio no sustituye a los
+            servicios oficiales.</li>
+        </ul>
+
+        <h2>Revisión de contenido</h2>
+        <p>Los reportes enviados quedan pendientes hasta que el administrador los revise. El administrador puede
+          aprobarlos, editarlos antes de publicarlos, rechazarlos o eliminarlos si no cumplen estas normas o no son
+          apropiados para la comunidad.</p>
+
+        <h2>Uso de la cuenta y datos</h2>
+        <p>La persona usuaria es responsable de la información que envía y de mantener su contraseña en privado. En esta
+          versión académica, las cuentas y los reportes se guardan en el navegador usado para la demostración; no existe
+          un servidor de autenticación ni una base de datos compartida.</p>
+        <p>Al marcar la casilla durante el registro, confirmas que leíste y aceptas estas reglas para participar en la
+          plataforma.</p>
+      </article>
+    </div>
+    <div class="acciones-terminos">
+      <p id="terms-scroll-help" class="ayuda" aria-live="polite">Desplázate hasta el final para habilitar la aceptación.
+      </p>
+      <button id="close-terms-button" class="boton boton-claro" type="button">Volver</button>
+      <button id="accept-terms-button" class="boton boton-rojo" type="button" disabled>Aceptar</button>
+    </div>
+  </dialog>
+
+  <footer class="pie">
+    <div class="contenedor pie-contenido"><strong>Reportes Alajuela</strong>
+      <p>Infórmate y comparte incidencias con responsabilidad.</p>
+    </div>
+  </footer>
+  <script type="module" src="JavaScript/app.js"></script>
+</body>
+
+</html>

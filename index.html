@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Consulta reportes comunitarios y comparte incidencias de la provincia de Alajuela.">
+  <title>Inicio | Reportes Alajuela</title>
+  <link rel="icon" href="img/logo-icon.png" type="image/png">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body data-page="inicio">
+  <!-- Encabezado compartido: marca del sitio y enlaces a las tres páginas. -->
+  <header class="encabezado">
+    <a class="marca" href="index.html">
+      <img src="img/logo-icon.png" alt="Logo de Reportes Alajuela">
+      <span>Reportes Alajuela</span>
+    </a>
+    <button class="menu" type="button" aria-expanded="false" aria-label="Abrir menú">☰</button>
+    <nav class="menu-principal" aria-label="Navegación principal">
+      <a data-nav="inicio" href="index.html" aria-current="page">Inicio</a>
+      <a data-nav="reportes" href="reportes.html">Reportes</a>
+      <a href="#acerca-de">Acerca de</a>
+      <div class="cuenta-navegacion">
+        <a class="iniciar-sesion-movil" data-mobile-login-link href="login.html" hidden>Iniciar sesión</a>
+        <details class="menu-cuenta" data-user-menu>
+          <summary aria-label="Abrir menú de cuenta"><span class="avatar-cuenta" aria-hidden="true">👤</span></summary>
+          <div class="opciones-cuenta">
+            <div data-account-details hidden>
+              <p><strong>Cédula</strong><span data-session-id></span></p>
+              <p><strong>Nombre</strong><span data-session-name></span></p>
+              <p><strong>Correo</strong><span data-session-email></span></p>
+              <button type="button" data-logout>Cerrar sesión</button>
+            </div>
+            <a data-login-link href="login.html">Iniciar sesión</a>
+          </div>
+        </details>
+      </div>
+      <a class="boton boton-rojo" href="gestion.html">Crear Reporte</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Aviso comunitario y presentación principal del proyecto. -->
+    <aside class="aviso" aria-label="Aviso de seguridad">
+      <div class="contenedor aviso-contenido">
+        <p><strong>Emergencias:</strong> llama al 9-1-1. Este sitio es una iniciativa comunitaria y no sustituye los
+          canales oficiales.</p>
+        <a href="reportes.html">Ver reportes <span aria-hidden="true">→</span></a>
+      </div>
+    </aside>
+
+    <section class="portada">
+      <div class="contenedor portada-contenido">
+        <div class="portada-texto">
+          <p class="etiqueta"><span class="punto" aria-hidden="true"></span> Comunidad informada, comunidad preparada
+          </p>
+          <h1 class="titulo">Reportes Ciudadanos <span>Alajuela</span></h1>
+          <p class="destacado">Los avisos importantes merecen un lugar fácil de encontrar.</p>
+          <p>Consulta situaciones de tu comunidad y comparte información clara sobre incidencias de la provincia de
+            Alajuela.</p>
+          <div class="botones-portada">
+            <a class="boton boton-rojo" href="gestion.html">＋ Crear reporte</a>
+            <a class="boton boton-claro" href="reportes.html"> 🔎 Explorar reportes</a>
+          </div>
+          <p class="nota">Reportes de demostración y aportes guardados en este navegador.</p>
+        </div>
+        <aside class="tarjeta-inicio tarjeta-foto">
+          <img class="foto-portada" src="img/ALJ-001.png" alt="Vista de una calle de una comunidad de Alajuela">
+          <div class="texto-foto">
+            <p class="etiqueta">Tu comunidad, al tanto</p>
+            <h2>Una herramienta para compartir información útil</h2>
+            <p>Encuentra reportes por cantón, distrito, categoría y estado.</p>
+            <a class="enlace" href="reportes.html">Consultar reportes <span aria-hidden="true">→</span></a>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Estos números los calcula app.js usando los reportes cargados. -->
+    <section class="resumen" aria-label="Resumen de reportes comunitarios">
+      <div class="contenedor datos-resumen">
+        <article class="dato-resumen total"><span class="numero" data-report-stat="total">—</span><span
+            class="nombre-dato">Reportes registrados</span></article>
+        <article class="dato-resumen"><span class="numero" data-report-stat="activo">—</span><span
+            class="nombre-dato">Activos</span></article>
+        <article class="dato-resumen"><span class="numero" data-report-stat="proceso">—</span><span
+            class="nombre-dato">En proceso</span></article>
+        <article class="dato-resumen"><span class="numero" data-report-stat="resuelto">—</span><span
+            class="nombre-dato">Resueltos o finalizados</span></article>
+      </div>
+    </section>
+
+    <!-- app.js coloca aquí las tres tarjetas más recientes del JSON. -->
+    <section class="seccion">
+      <div class="contenedor">
+        <div class="titulo-seccion titulo-fila">
+          <div>
+            <p class="etiqueta">Actividad reciente</p>
+            <h2>Reportes de la comunidad</h2>
+          </div>
+          <a class="enlace" href="reportes.html">Ver todos <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="lista-reportes" id="recent-reports" aria-live="polite">
+          <p class="cargando">Cargando reportes…</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Explicación breve de cómo participar en el proyecto. -->
+    <section class="seccion fondo-claro">
+      <div class="contenedor">
+        <div class="titulo-seccion">
+          <p class="etiqueta">Cómo participar</p>
+          <h2>Reportar es sencillo</h2>
+        </div>
+        <div class="pasos">
+          <article class="paso"><span>01</span>
+            <h3>Consulta</h3>
+            <p>Revisa incidencias de los cantones y distritos de Alajuela.</p>
+          </article>
+          <article class="paso"><span>02</span>
+            <h3>Comparte</h3>
+            <p>Registra una situación con categoría, ubicación y descripción.</p>
+          </article>
+          <article class="paso"><span>03</span>
+            <h3>Mantente al tanto</h3>
+            <p>Busca y filtra reportes disponibles desde este navegador.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Origen universitario de la iniciativa. El menú enlaza a este id. -->
+    <section class="seccion" id="acerca-de">
+      <div class="contenedor acerca">
+        <div class="acerca-texto">
+          <p class="etiqueta">Acerca de la iniciativa</p>
+          <h2>Una idea universitaria con sentido comunitario</h2>
+          <p>Reportes Alajuela fue creado por <strong>Daniela Cano</strong> como proyecto de un curso de desarrollo web.
+            Surgió al notar que muchos avisos publicados en Facebook quedaban dispersos y eran difíciles de consultar.
+          </p>
+          <p>La iniciativa reúne información útil y anima a la comunidad a aportar reportes claros y respetuosos.</p>
+        </div>
+        <aside class="acerca-nota">
+          <span class="LISTA" aria-hidden="true">📋</span>
+          <h3>Un reporte puede ayudar</h3>
+          <p>Describe hechos verificables, evita compartir datos personales y usa el 9-1-1 ante emergencias.</p>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <!-- Pie de página con teléfonos y enlaces para llamar desde un celular. -->
+  <footer class="pie">
+    <div class="contenedor pie-contenido">
+      <div>
+        <strong>Reportes Alajuela</strong>
+        <p>Infórmate y comparte incidencias con responsabilidad.</p>
+      </div>
+
+      <div class="contactos">
+        <div class="contacto">
+          <p class="etiqueta">Municipalidad · Emergencias y seguridad</p>
+          <a href="tel:+50624431400">+506 2443-1400</a>
+        </div>
+
+        <div class="contacto">
+          <p class="etiqueta">Emergencias</p>
+          <a href="tel:911">9-1-1</a>
+        </div>
+
+        <div class="contacto">
+          <p class="etiqueta">Plataforma de Servicios</p>
+          <a href="tel:+50624362310">+506 2436-2310</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- app.js usa este espacio para mostrar confirmaciones temporales. -->
+  <div id="announcement" class="aviso-flotante" role="status" aria-live="polite"></div>
+  <script type="module" src="JavaScript/app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Registra y administra reportes ciudadanos de Alajuela.">
+  <title>Crear Reporte | Reportes Alajuela</title>
+  <link rel="icon" href="img/logo-icon.png" type="image/png">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body data-page="gestion">
+  <!-- Encabezado compartido y navegación del sitio. -->
+  <header class="encabezado">
+    <a class="marca" href="index.html"><img src="img/logo-icon.png" alt="Logo de Reportes Alajuela"><span>Reportes
+        Alajuela</span></a>
+    <button class="menu" type="button" aria-expanded="false" aria-label="Abrir menú">☰</button>
+    <nav class="menu-principal" aria-label="Navegación principal">
+      <a data-nav="inicio" href="index.html">Inicio</a>
+      <a data-nav="reportes" href="reportes.html">Reportes</a>
+      <a href="index.html#acerca-de">Acerca de</a>
+      <div class="cuenta-navegacion">
+        <a class="iniciar-sesion-movil" data-mobile-login-link href="login.html" hidden>Iniciar sesión</a>
+        <details class="menu-cuenta" data-user-menu>
+          <summary aria-label="Abrir menú de cuenta"><span class="avatar-cuenta" aria-hidden="true">👤</span></summary>
+          <div class="opciones-cuenta">
+            <div data-account-details hidden>
+              <p><strong>Cédula</strong><span data-session-id></span></p>
+              <p><strong>Nombre</strong><span data-session-name></span></p>
+              <p><strong>Correo</strong><span data-session-email></span></p>
+              <button type="button" data-logout>Cerrar sesión</button>
+            </div>
+            <a data-login-link href="login.html">Iniciar sesión</a>
+          </div>
+        </details>
+      </div>
+      <a class="boton boton-rojo" href="gestion.html" aria-current="page">Gestión</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="intro">
+      <div class="contenedor">
+        <p class="etiqueta">Registro y gestión</p>
+        <h1>Crear un reporte</h1>
+        <p>Describe una incidencia de la provincia de Alajuela. Al elegir el cantón, el formulario mostrará sus
+          distritos correspondientes.</p>
+      </div>
+    </section>
+
+    <section class="seccion">
+      <div id="user-area" class="contenedor gestion" hidden>
+        <div class="area-titulo">
+          <p id="session-label" class="etiqueta"></p>
+          <button id="logout-button" class="boton boton-claro" type="button">Cerrar sesión</button>
+        </div>
+        <!-- Formulario: app.js valida los datos y los guarda en este navegador. -->
+        <form id="new-report-form" class="formulario" novalidate>
+          <h2>Información de la incidencia</h2>
+          <p class="ayuda">Completa los campos obligatorios. No incluyas nombres, teléfonos ni otros datos personales.
+          </p>
+
+          <div class="campo">
+            <label for="report-title">Título del reporte</label>
+            <input id="report-title" name="title" required minlength="8" maxlength="80"
+              placeholder="Ej. Fuga de agua en el parque">
+            <small class="error" data-error-for="title"></small>
+          </div>
+
+          <div class="fila">
+            <div class="campo">
+              <label for="report-category">Categoría</label>
+              <select id="report-category" name="category" required>
+                <option value="">Selecciona una categoría</option>
+                <option value="agua">Corte de agua</option>
+                <option value="huecos">Hueco o bache</option>
+                <option value="fugas">Fuga de agua</option>
+                <option value="accidentes">Accidente de tránsito</option>
+                <option value="otros">Otra incidencia</option>
+                <option value="Estadio">Partido de fútbol</option>
+              </select>
+              <small class="error" data-error-for="category"></small>
+            </div>
+            <div class="campo">
+              <label for="report-canton">Cantón</label>
+              <select id="report-canton" name="canton" required>
+                <option value="">Selecciona un cantón de Alajuela</option>
+              </select>
+              <small class="error" data-error-for="canton"></small>
+            </div>
+          </div>
+
+          <div class="campo">
+            <label for="report-district">Distrito</label>
+            <select id="report-district" name="district" required disabled>
+              <option value="">Primero selecciona un cantón</option>
+            </select>
+            <small class="error" data-error-for="district"></small>
+          </div>
+
+          <div class="campo">
+            <label for="report-location">Dirección o punto de referencia</label>
+            <input id="report-location" name="location" required minlength="5" maxlength="100"
+              placeholder="Ej. 100 m al norte del parque">
+            <small class="error" data-error-for="location"></small>
+          </div>
+
+          <!-- La persona elige una foto local; app.js muestra una vista previa y la guarda con el reporte. -->
+          <div class="campo">
+            <label for="report-image">Foto del incidente (opcional)</label>
+            <input id="report-image" name="image" type="file" accept="image/png,image/jpeg,image/webp"
+              aria-describedby="image-help">
+            <small id="image-help" class="ayuda">Selecciona una foto PNG, JPG o WebP de hasta 800 KB.</small>
+            <img id="image-preview" class="vista" alt="Vista previa de la imagen seleccionada" hidden>
+            <small class="error" data-error-for="image"></small>
+          </div>
+
+          <div class="campo">
+            <label for="report-description">Descripción</label>
+            <textarea id="report-description" name="description" required minlength="20" maxlength="400" rows="5"
+              placeholder="Explica qué sucede y desde cuándo…"></textarea>
+            <small class="error" data-error-for="description"></small>
+          </div>
+
+          <p id="form-message" class="resultado" role="status" aria-live="polite"></p>
+          <div class="botones-form">
+            <button class="boton boton-rojo" type="submit">Enviar a revisión</button>
+            <button class="boton boton-claro" id="clear-form" type="button">Limpiar formulario</button>
+          </div>
+        </form>
+
+        <!-- El usuario ve sus envíos; todavía no aparecen públicamente hasta aprobación. -->
+        <aside id="user-reports-panel" class="panel">
+          <p class="etiqueta">Solo en este dispositivo</p>
+          <h2>Mis envíos</h2>
+          <p>Los reportes enviados quedan pendientes hasta que el administrador los revise.</p>
+          <div id="my-reports" class="mis-reportes" aria-live="polite">
+            <p class="cargando">Cargando tus reportes…</p>
+          </div>
+        </aside>
+
+        <!-- Herramientas privadas de revisión que solo se muestran al iniciar como admin. -->
+        <section id="admin-panel" class="panel admin-panel" hidden>
+          <p class="etiqueta">Panel de administración</p>
+          <h2>Revisar reportes</h2>
+          <p>Aprueba los reportes apropiados para que aparezcan en la página pública. También puedes editarlos o
+            eliminarlos.</p>
+          <div id="admin-reports" class="mis-reportes" aria-live="polite"></div>
+        </section>
+      </div>
+    </section>
+
+    <!-- Formulario para editar el contenido sin cuadros prompt del navegador. -->
+    <dialog id="edit-dialog" class="dialogo dialogo-editar" aria-labelledby="edit-dialog-title">
+      <form id="edit-report-form" class="formulario formulario-edicion" novalidate>
+        <p class="etiqueta">Panel de administración</p>
+        <h2 id="edit-dialog-title">Editar reporte</h2>
+        <p class="ayuda">Actualiza el título, el lugar o la descripción. Los campos se validan mientras escribes.</p>
+
+        <div class="campo">
+          <label for="edit-title">Título</label>
+          <input id="edit-title" name="title" required minlength="8" maxlength="80" aria-describedby="edit-title-error">
+          <small id="edit-title-error" class="error" data-error-for="title"></small>
+        </div>
+
+        <div class="campo">
+          <label for="edit-location">Lugar o punto de referencia</label>
+          <input id="edit-location" name="location" required minlength="5" maxlength="100"
+            aria-describedby="edit-location-error">
+          <small id="edit-location-error" class="error" data-error-for="location"></small>
+        </div>
+
+        <div class="campo">
+          <label for="edit-description">Descripción</label>
+          <textarea id="edit-description" name="description" required minlength="20" maxlength="400" rows="5"
+            aria-describedby="edit-description-error"></textarea>
+          <small id="edit-description-error" class="error" data-error-for="description"></small>
+        </div>
+
+        <div class="campo">
+          <label for="edit-status">Estado del reporte</label>
+          <select id="edit-status" name="status" required>
+            <option value="activo">Activo</option>
+            <option value="proceso">En proceso</option>
+            <option value="finalizado">Finalizado</option>
+            <option value="resuelto">Resuelto</option>
+          </select>
+        </div>
+
+        <p id="edit-form-message" class="resultado" role="status" aria-live="polite"></p>
+        <div class="botones-form">
+          <button class="boton boton-claro" type="button" data-close-edit>Cancelar</button>
+          <button class="boton boton-rojo" type="submit">Guardar cambios</button>
+        </div>
+      </form>
+    </dialog>
+
+    <!-- Ventana para mostrar el detalle de un reporte. -->
+    <dialog id="report-dialog" class="dialogo" aria-labelledby="report-detail-title">
+      <button class="cerrar" type="button" aria-label="Cerrar detalle">×</button>
+      <div id="report-detail"></div>
+    </dialog>
+  </main>
+
+  <footer class="pie">
+    <div class="contenedor pie-contenido">
+      <div>
+        <strong>Reportes Alajuela</strong>
+        <p>Infórmate y comparte incidencias con responsabilidad.</p>
+      </div>
+
+      <div class="contactos">
+        <div class="contacto">
+          <p class="etiqueta">Municipalidad · Emergencias y seguridad</p>
+          <a href="tel:+50624431400">+506 2443-1400</a>
+        </div>
+
+        <div class="contacto">
+          <p class="etiqueta">Emergencias</p>
+          <a href="tel:911">9-1-1</a>
+        </div>
+
+        <div class="contacto">
+          <p class="etiqueta">Plataforma de Servicios</p>
+          <a href="tel:+50624362310">+506 2436-2310</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <div id="announcement" class="aviso-flotante" role="status" aria-live="polite"></div>
+  <script type="module" src="JavaScript/app.js"></script>
+</body>
+
+</html>

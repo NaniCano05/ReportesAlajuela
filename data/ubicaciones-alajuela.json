@@ -1,0 +1,566 @@
+{
+  "provincia": "Alajuela",
+  "codigoProvincia": "2",
+  "cantones": [
+    {
+      "codigo": "201",
+      "nombre": "Alajuela",
+      "distritos": [
+        {
+          "codigo": "20101",
+          "nombre": "Alajuela"
+        },
+        {
+          "codigo": "20102",
+          "nombre": "San José"
+        },
+        {
+          "codigo": "20103",
+          "nombre": "Carrizal"
+        },
+        {
+          "codigo": "20104",
+          "nombre": "San Antonio"
+        },
+        {
+          "codigo": "20105",
+          "nombre": "Guácima"
+        },
+        {
+          "codigo": "20106",
+          "nombre": "San Isidro"
+        },
+        {
+          "codigo": "20107",
+          "nombre": "Sabanilla"
+        },
+        {
+          "codigo": "20108",
+          "nombre": "San Rafael"
+        },
+        {
+          "codigo": "20109",
+          "nombre": "Río Segundo"
+        },
+        {
+          "codigo": "20110",
+          "nombre": "Desamparados"
+        },
+        {
+          "codigo": "20111",
+          "nombre": "Turrucares"
+        },
+        {
+          "codigo": "20112",
+          "nombre": "Tambor"
+        },
+        {
+          "codigo": "20113",
+          "nombre": "Garita"
+        },
+        {
+          "codigo": "20114",
+          "nombre": "Sarapiquí"
+        }
+      ]
+    },
+    {
+      "codigo": "202",
+      "nombre": "San Ramón",
+      "distritos": [
+        {
+          "codigo": "20201",
+          "nombre": "San Ramón"
+        },
+        {
+          "codigo": "20202",
+          "nombre": "Santiago"
+        },
+        {
+          "codigo": "20203",
+          "nombre": "San Juan"
+        },
+        {
+          "codigo": "20204",
+          "nombre": "Piedades Norte"
+        },
+        {
+          "codigo": "20205",
+          "nombre": "Piedades Sur"
+        },
+        {
+          "codigo": "20206",
+          "nombre": "San Rafael"
+        },
+        {
+          "codigo": "20207",
+          "nombre": "San Isidro"
+        },
+        {
+          "codigo": "20208",
+          "nombre": "Ángeles"
+        },
+        {
+          "codigo": "20209",
+          "nombre": "Alfaro"
+        },
+        {
+          "codigo": "20210",
+          "nombre": "Volio"
+        },
+        {
+          "codigo": "20211",
+          "nombre": "Concepción"
+        },
+        {
+          "codigo": "20212",
+          "nombre": "Zapotal"
+        },
+        {
+          "codigo": "20213",
+          "nombre": "Peñas Blancas"
+        },
+        {
+          "codigo": "20214",
+          "nombre": "San Lorenzo"
+        }
+      ]
+    },
+    {
+      "codigo": "203",
+      "nombre": "Grecia",
+      "distritos": [
+        {
+          "codigo": "20301",
+          "nombre": "Grecia"
+        },
+        {
+          "codigo": "20302",
+          "nombre": "San Isidro"
+        },
+        {
+          "codigo": "20303",
+          "nombre": "San José"
+        },
+        {
+          "codigo": "20304",
+          "nombre": "San Roque"
+        },
+        {
+          "codigo": "20305",
+          "nombre": "Tacares"
+        },
+        {
+          "codigo": "20307",
+          "nombre": "Puente de Piedra"
+        },
+        {
+          "codigo": "20308",
+          "nombre": "Bolivar"
+        }
+      ]
+    },
+    {
+      "codigo": "204",
+      "nombre": "San Mateo",
+      "distritos": [
+        {
+          "codigo": "20401",
+          "nombre": "San Mateo"
+        },
+        {
+          "codigo": "20402",
+          "nombre": "Desmonte"
+        },
+        {
+          "codigo": "20403",
+          "nombre": "Jesús María"
+        },
+        {
+          "codigo": "20404",
+          "nombre": "Labrador"
+        }
+      ]
+    },
+    {
+      "codigo": "205",
+      "nombre": "Atenas",
+      "distritos": [
+        {
+          "codigo": "20501",
+          "nombre": "Atenas"
+        },
+        {
+          "codigo": "20502",
+          "nombre": "Jesús"
+        },
+        {
+          "codigo": "20503",
+          "nombre": "Mercedes"
+        },
+        {
+          "codigo": "20504",
+          "nombre": "San Isidro"
+        },
+        {
+          "codigo": "20505",
+          "nombre": "Concepción"
+        },
+        {
+          "codigo": "20506",
+          "nombre": "San José"
+        },
+        {
+          "codigo": "20507",
+          "nombre": "Santa Eulalia"
+        },
+        {
+          "codigo": "20508",
+          "nombre": "Escobal"
+        }
+      ]
+    },
+    {
+      "codigo": "206",
+      "nombre": "Naranjo",
+      "distritos": [
+        {
+          "codigo": "20601",
+          "nombre": "Naranjo"
+        },
+        {
+          "codigo": "20602",
+          "nombre": "San Miguel"
+        },
+        {
+          "codigo": "20603",
+          "nombre": "San José"
+        },
+        {
+          "codigo": "20604",
+          "nombre": "Cirrí Sur"
+        },
+        {
+          "codigo": "20605",
+          "nombre": "San Jerónimo"
+        },
+        {
+          "codigo": "20606",
+          "nombre": "San Juan"
+        },
+        {
+          "codigo": "20607",
+          "nombre": "El Rosario"
+        },
+        {
+          "codigo": "20608",
+          "nombre": "Palmitos"
+        }
+      ]
+    },
+    {
+      "codigo": "207",
+      "nombre": "Palmares",
+      "distritos": [
+        {
+          "codigo": "20701",
+          "nombre": "Palmares"
+        },
+        {
+          "codigo": "20702",
+          "nombre": "Zaragoza"
+        },
+        {
+          "codigo": "20703",
+          "nombre": "Buenos Aires"
+        },
+        {
+          "codigo": "20704",
+          "nombre": "Santiago"
+        },
+        {
+          "codigo": "20705",
+          "nombre": "Candelaria"
+        },
+        {
+          "codigo": "20706",
+          "nombre": "Esquipulas"
+        },
+        {
+          "codigo": "20707",
+          "nombre": "La Granja"
+        }
+      ]
+    },
+    {
+      "codigo": "208",
+      "nombre": "Poás",
+      "distritos": [
+        {
+          "codigo": "20801",
+          "nombre": "San Pedro"
+        },
+        {
+          "codigo": "20802",
+          "nombre": "San Juan"
+        },
+        {
+          "codigo": "20803",
+          "nombre": "San Rafael"
+        },
+        {
+          "codigo": "20804",
+          "nombre": "Carrillos"
+        },
+        {
+          "codigo": "20805",
+          "nombre": "Sabana Redonda"
+        }
+      ]
+    },
+    {
+      "codigo": "209",
+      "nombre": "Orotina",
+      "distritos": [
+        {
+          "codigo": "20901",
+          "nombre": "Orotina"
+        },
+        {
+          "codigo": "20902",
+          "nombre": "El Mastate"
+        },
+        {
+          "codigo": "20903",
+          "nombre": "Hacienda Vieja"
+        },
+        {
+          "codigo": "20904",
+          "nombre": "Coyolar"
+        },
+        {
+          "codigo": "20905",
+          "nombre": "La Ceiba"
+        }
+      ]
+    },
+    {
+      "codigo": "210",
+      "nombre": "San Carlos",
+      "distritos": [
+        {
+          "codigo": "21001",
+          "nombre": "Quesada"
+        },
+        {
+          "codigo": "21002",
+          "nombre": "Florencia"
+        },
+        {
+          "codigo": "21003",
+          "nombre": "Buenavista"
+        },
+        {
+          "codigo": "21004",
+          "nombre": "Aguas Zarcas"
+        },
+        {
+          "codigo": "21005",
+          "nombre": "Venecia"
+        },
+        {
+          "codigo": "21006",
+          "nombre": "Pital"
+        },
+        {
+          "codigo": "21007",
+          "nombre": "La Fortuna"
+        },
+        {
+          "codigo": "21008",
+          "nombre": "La Tigra"
+        },
+        {
+          "codigo": "21009",
+          "nombre": "La Palmera"
+        },
+        {
+          "codigo": "21010",
+          "nombre": "Venado"
+        },
+        {
+          "codigo": "21011",
+          "nombre": "Cutris"
+        },
+        {
+          "codigo": "21012",
+          "nombre": "Monterrey"
+        },
+        {
+          "codigo": "21013",
+          "nombre": "Pocosol"
+        }
+      ]
+    },
+    {
+      "codigo": "211",
+      "nombre": "Zarcero",
+      "distritos": [
+        {
+          "codigo": "21101",
+          "nombre": "Zarcero"
+        },
+        {
+          "codigo": "21102",
+          "nombre": "Laguna"
+        },
+        {
+          "codigo": "21103",
+          "nombre": "Tapesco"
+        },
+        {
+          "codigo": "21104",
+          "nombre": "Guadalupe"
+        },
+        {
+          "codigo": "21105",
+          "nombre": "Palmira"
+        },
+        {
+          "codigo": "21106",
+          "nombre": "Zapote"
+        },
+        {
+          "codigo": "21107",
+          "nombre": "Brisas"
+        }
+      ]
+    },
+    {
+      "codigo": "212",
+      "nombre": "Sarchí",
+      "distritos": [
+        {
+          "codigo": "21201",
+          "nombre": "Sarchí Norte"
+        },
+        {
+          "codigo": "21202",
+          "nombre": "Sarchí Sur"
+        },
+        {
+          "codigo": "21203",
+          "nombre": "Toro Amarillo"
+        },
+        {
+          "codigo": "21204",
+          "nombre": "San Pedro"
+        },
+        {
+          "codigo": "21205",
+          "nombre": "Rodríguez"
+        }
+      ]
+    },
+    {
+      "codigo": "213",
+      "nombre": "Upala",
+      "distritos": [
+        {
+          "codigo": "21301",
+          "nombre": "Upala"
+        },
+        {
+          "codigo": "21302",
+          "nombre": "Aguas Claras"
+        },
+        {
+          "codigo": "21303",
+          "nombre": "San José O Pizote"
+        },
+        {
+          "codigo": "21304",
+          "nombre": "Bijagua"
+        },
+        {
+          "codigo": "21305",
+          "nombre": "Delicias"
+        },
+        {
+          "codigo": "21306",
+          "nombre": "Dos Ríos"
+        },
+        {
+          "codigo": "21307",
+          "nombre": "Yolillal"
+        },
+        {
+          "codigo": "21308",
+          "nombre": "Canalete"
+        }
+      ]
+    },
+    {
+      "codigo": "214",
+      "nombre": "Los Chiles",
+      "distritos": [
+        {
+          "codigo": "21401",
+          "nombre": "Los Chiles"
+        },
+        {
+          "codigo": "21402",
+          "nombre": "Caño Negro"
+        },
+        {
+          "codigo": "21403",
+          "nombre": "El Amparo"
+        },
+        {
+          "codigo": "21404",
+          "nombre": "San Jorge"
+        }
+      ]
+    },
+    {
+      "codigo": "215",
+      "nombre": "Guatuso",
+      "distritos": [
+        {
+          "codigo": "21501",
+          "nombre": "San Rafael"
+        },
+        {
+          "codigo": "21502",
+          "nombre": "Buenavista"
+        },
+        {
+          "codigo": "21503",
+          "nombre": "Cote"
+        },
+        {
+          "codigo": "21504",
+          "nombre": "Katira"
+        }
+      ]
+    },
+    {
+      "codigo": "216",
+      "nombre": "Río Cuarto",
+      "distritos": [
+        {
+          "codigo": "21601",
+          "nombre": "Río Cuarto"
+        },
+        {
+          "codigo": "21602",
+          "nombre": "Santa Rita"
+        },
+        {
+          "codigo": "21603",
+          "nombre": "Santa Isabel"
+        }
+      ]
+    }
+  ]
+}

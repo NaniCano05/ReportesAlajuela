@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Busca y filtra reportes ciudadanos de la provincia de Alajuela.">
+  <title>Reportes | Reportes Alajuela</title>
+  <link rel="icon" href="img/logo-icon.png" type="image/png">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body data-page="reportes">
+  <!-- Encabezado compartido y navegación del sitio. -->
+  <header class="encabezado">
+    <a class="marca" href="index.html"><img src="img/logo-icon.png" alt="Logo de Reportes Alajuela"><span>Reportes
+        Alajuela</span></a>
+    <button class="menu" type="button" aria-expanded="false" aria-label="Abrir menú">☰</button>
+    <nav class="menu-principal" aria-label="Navegación principal">
+      <a data-nav="inicio" href="index.html">Inicio</a>
+      <a data-nav="reportes" href="reportes.html" aria-current="page">Reportes</a>
+      <a href="index.html#acerca-de">Acerca de</a>
+      <div class="cuenta-navegacion">
+        <a class="iniciar-sesion-movil" data-mobile-login-link href="login.html" hidden>Iniciar sesión</a>
+        <details class="menu-cuenta" data-user-menu>
+          <summary aria-label="Abrir menú de cuenta"><span class="avatar-cuenta" aria-hidden="true">👤</span></summary>
+          <div class="opciones-cuenta">
+            <div data-account-details hidden>
+              <p><strong>Cédula</strong><span data-session-id></span></p>
+              <p><strong>Nombre</strong><span data-session-name></span></p>
+              <p><strong>Correo</strong><span data-session-email></span></p>
+              <button type="button" data-logout>Cerrar sesión</button>
+            </div>
+            <a data-login-link href="login.html">Iniciar sesión</a>
+          </div>
+        </details>
+      </div>
+      <a class="boton boton-rojo" href="gestion.html">Crear Reporte</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="intro">
+      <div class="contenedor">
+        <p class="etiqueta">Solución interactiva</p>
+        <h1>Reportes de la comunidad</h1>
+        <p>Busca reportes de la provincia de Alajuela por cantón, distrito, categoría o estado. Los resultados se
+          actualizan mientras escribes o cambias los filtros.</p>
+      </div>
+    </section>
+
+    <!-- Controles de búsqueda y filtros que app.js conecta con los reportes. -->
+    <section class="seccion">
+      <div class="contenedor">
+        <div class="filtros" aria-label="Filtros de reportes">
+          <label class="busqueda">Buscar por cantón, distrito, lugar o descripción
+            <input id="search-input" type="search" placeholder="Ej. San Carlos, Quesada, fuga…" autocomplete="off">
+          </label>
+          <label for="canton-filter">Cantón
+            <select id="canton-filter">
+              <option value="all">Todos los cantones</option>
+            </select>
+          </label>
+          <label for="district-filter">Distrito
+            <select id="district-filter" disabled>
+              <option value="all">Todos los distritos</option>
+            </select>
+          </label>
+          <label for="status-filter">Estado
+            <select id="status-filter">
+              <option value="all">Todos los estados</option>
+              <option value="activo">Activo</option>
+              <option value="proceso">En proceso</option>
+              <option value="finalizado">Finalizado</option>
+              <option value="resuelto">Resuelto</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="categorias" aria-label="Filtrar por categoría">
+          <button class="filtro seleccionado" type="button" data-cat="all" aria-pressed="true">Todas</button>
+          <button class="filtro" type="button" data-cat="agua" aria-pressed="false">Cortes de agua</button>
+          <button class="filtro" type="button" data-cat="huecos" aria-pressed="false">Huecos</button>
+          <button class="filtro" type="button" data-cat="fugas" aria-pressed="false">Fugas</button>
+          <button class="filtro" type="button" data-cat="accidentes" aria-pressed="false">Accidentes</button>
+          <button class="filtro" type="button" data-cat="otros" aria-pressed="false">Otros</button>
+          <button class="filtro" type="button" data-cat="Estadio" aria-pressed="false">Partidos de fútbol</button>
+        </div>
+
+        <p class="cantidad" id="result-count" aria-live="polite"></p>
+        <!-- app.js reemplaza el mensaje de carga con las tarjetas filtradas. -->
+        <div class="lista-reportes" id="report-list" aria-live="polite">
+          <p class="cargando">Cargando reportes…</p>
+        </div>
+        <div id="no-results" class="vacio" hidden>
+          <h2>No encontramos reportes</h2>
+          <p>Prueba con otro cantón, distrito o término de búsqueda.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ventana que app.js completa al abrir el detalle de una tarjeta. -->
+    <dialog id="report-dialog" class="dialogo" aria-labelledby="report-detail-title">
+      <button class="cerrar" type="button" aria-label="Cerrar detalle">×</button>
+      <div id="report-detail"></div>
+    </dialog>
+  </main>
+  <footer class="pie">
+    <div class="contenedor pie-contenido">
+      <div>
+        <strong>Reportes Alajuela</strong>
+        <p>Infórmate y comparte incidencias con responsabilidad.</p>
+      </div>
+
+      <div class="contactos">
+        <div class="contacto">
+          <p class="etiqueta">Municipalidad · Emergencias y seguridad</p>
+          <a href="tel:+50624431400">+506 2443-1400</a>
+        </div>
+
+        <div class="contacto">
+          <p class="etiqueta">Emergencias</p>
+          <a href="tel:911">9-1-1</a>
+        </div>
+
+        <div class="contacto">
+          <p class="etiqueta">Plataforma de Servicios</p>
+          <a href="tel:+50624362310">+506 2436-2310</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <div id="announcement" class="aviso-flotante" role="status" aria-live="polite"></div>
+  <script type="module" src="JavaScript/app.js"></script>
+</body>
+
+</html>
