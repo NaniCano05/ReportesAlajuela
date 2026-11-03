@@ -1,7 +1,7 @@
 ## Repositorio en GitHub
 
-[Ver Reportes Alajuela hecho por Daniela Cano Aldaro](https://github.com/NaniCano05/ReportesAlajuela)
-
+[Ver Reportes Alajuela hecho por Daniela Cano Alfaro](https://github.com/NaniCano05/ReportesAlajuela)
+[Ver Reportes Alajuela en GITHUB PAGES](https://nanicano05.github.io/ReportesAlajuela/)
 <p align="center">
   <img src="img/logo-icon.png" alt="Logo de Reportes Alajuela" width="90">
 </p>
