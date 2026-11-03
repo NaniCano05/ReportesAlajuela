@@ -1,60 +1,109 @@
-# Reportes Alajuela
+## Repositorio en GitHub
 
-Sitio web académico para consultar, filtrar y registrar incidencias comunitarias de la provincia de Alajuela. Se hizo con HTML, CSS y JavaScript del navegador; no usa frameworks ni servidor de aplicación.
+[Ver Reportes Alajuela hecho por Daniela Cano Aldaro](https://github.com/NaniCano05/ReportesAlajuela)
+
+<p align="center">
+  <img src="img/logo-icon.png" alt="Logo de Reportes Alajuela" width="90">
+</p>
+
+<h1 align="center">Reportes Alajuela</h1>
+
+<p align="center">
+  Sitio web académico para consultar y compartir incidencias comunitarias de la provincia de Alajuela.
+</p>
+
+<p align="center">
+  Proyecto individual · ISW-521 Programación en Ambiente Web I
+</p>
+
+---
+
+## Sobre el proyecto
+
+Reportes Alajuela reúne en un solo lugar avisos sobre situaciones que pueden afectar a las comunidades. La página permite buscar reportes por ubicación, categoría y estado; abrir sus detalles y registrar una incidencia con información organizada.
+
+El proyecto se desarrolló con **HTML, CSS y JavaScript nativos**, sin frameworks. Los ejemplos iniciales se cargan desde archivos JSON. Las cuentas, los reportes creados y otros cambios de la demostración se conservan en el navegador.
+
+## Qué se puede hacer
+
+- Consultar reportes de la provincia de Alajuela.
+- Buscar por texto y filtrar por cantón, distrito, categoría o estado.
+- Abrir el detalle de cada incidencia.
+- Marcar **Me gusta** o **Me afecta**.
+- Crear una cuenta, leer y aceptar los términos e iniciar sesión.
+- Enviar un reporte con ubicación, descripción y una imagen opcional.
+- Revisar los reportes enviados desde el panel de administración, aprobarlos, editarlos o eliminarlos.
+
+Los reportes nuevos quedan pendientes hasta que la persona administradora los revise. Las categorías incluyen cortes de agua, huecos, fugas, accidentes, otros reportes y partidos de fútbol. Los estados disponibles son Activo, En proceso, Finalizado y Resuelto.
 
 ## Cómo se fue construyendo
 
-1. **Se definió el contenido.** Se prepararon reportes de ejemplo en `data/reportes.json` y cantones con sus distritos en `data/ubicaciones-alajuela.json`. Los registros territoriales usan códigos para que el distrito siempre corresponda al cantón elegido.
-2. **Se armó la página de inicio.** `index.html` presenta el propósito del sitio, un resumen y accesos a las otras secciones. También contiene el bloque “Acerca de”.
-3. **Se creó la consulta de reportes.** `reportes.html` aporta el buscador y los controles por ubicación, categoría y estado. `JavaScript/app.js` carga los JSON, dibuja las tarjetas y vuelve a aplicar los filtros cuando cambia una opción.
-4. **Se agregó el formulario y la revisión.** `gestion.html` contiene el formulario para enviar incidencias y los paneles de usuario y administración. Los envíos quedan pendientes; el administrador puede revisarlos, editarlos, aprobarlos o eliminarlos.
-5. **Se conectó el registro y el acceso.** `registro.html`, `login.html` y `terminos.html` cubren creación de cuenta, inicio de sesión y lectura de las reglas. `JavaScript/account.js` valida los datos, registra cuentas y controla qué panel se muestra según el rol.
-6. **Se repartió la lógica en módulos.** `JavaScript/utils.js` reúne operaciones pequeñas que comparten los otros archivos, como lectura y escritura local, normalización de texto, lectura de imágenes y escape de HTML.
-7. **Se aplicó el diseño común.** `css/styles.css` define colores, tipografía, tarjetas, formularios, navegación y adaptación a distintos anchos de pantalla. Usa CSS Grid, Flexbox y media queries.
-8. **Se revisaron los datos guardados.** Los reportes base vienen del JSON; las cuentas, envíos y cambios de la demostración se guardan en el navegador. La sesión de acceso se mantiene en `sessionStorage`.
+1. **Se prepararon los datos.** `data/reportes.json` reúne 13 reportes de ejemplo. `data/ubicaciones-alajuela.json` contiene 16 cantones y 116 distritos, organizados con códigos para relacionar cada distrito con su cantón.
+2. **Se armó la estructura de las páginas.** `index.html` presenta el proyecto y la sección Acerca de. `reportes.html` contiene la búsqueda y los filtros. `gestion.html` reúne el formulario de incidencias y los paneles de usuario y administración.
+3. **Se completó el recorrido de cuentas.** `registro.html`, `login.html` y `terminos.html` cubren el registro, el acceso y las condiciones de participación.
+4. **Se conectó el comportamiento.** `JavaScript/app.js` carga los datos, actualiza las tarjetas y filtros, valida los reportes y controla las acciones de usuario y administración. `JavaScript/account.js` maneja el registro, la sesión, los roles y el perfil. `JavaScript/utils.js` reúne funciones compartidas para leer datos, normalizar texto, procesar imágenes y proteger el HTML generado.
+5. **Se aplicó el diseño.** `css/styles.css` define la identidad visual, los formularios, las tarjetas y la adaptación a distintos tamaños de pantalla. Usa CSS Grid, Flexbox y media queries.
+6. **Se guardan los cambios en el navegador.** `localStorage` conserva los datos de la demostración; `sessionStorage` mantiene la sesión iniciada durante la sesión de la pestaña.
 
-## Cómo abrirlo
+## Cómo abrirlo en tu computadora
 
-1. Descarga o clona el repositorio y abre la carpeta del proyecto en Visual Studio Code.
-2. Instala o activa la extensión **Live Server**.
-3. Haz clic derecho en `index.html` y elige **Open with Live Server**.
-4. Navega desde el menú. Es necesario usar un servidor local porque el sitio importa módulos JavaScript y lee archivos JSON con `fetch`; abrir `index.html` como `file://` puede bloquear esas operaciones.
+1. Abre la carpeta del proyecto en Visual Studio Code.
+2. Inicia un servidor local, por ejemplo con la extensión **Live Server**.
+3. Abre `index.html` con Live Server.
+4. Usa el menú para entrar a Reportes, crear una cuenta o iniciar sesión.
 
-## Recorrido para revisar
+No abras la página directamente como `file://`: el proyecto usa módulos JavaScript y `fetch()` para leer los archivos JSON, y el navegador puede bloquear esas solicitudes cuando no hay un servidor local.
 
-- En **Reportes**, combina texto, cantón, distrito, categoría y estado. Abre una tarjeta para ver su detalle. Las reacciones “Me gusta” y “Me afecta” se pueden alternar.
-- En **Crear Reporte**, inicia sesión o crea una cuenta, acepta los términos y envía un reporte. El formulario valida campos y el envío queda pendiente para revisión.
-- Para demostrar administración, inicia sesión con la cuenta de ejemplo `admin` y contraseña `admin1234+`. Para la cuenta de ejemplo de usuario usa `usuario` y `user123`.
-- Una cuenta nueva se crea en el formulario de registro y luego se inicia sesión con su cédula y contraseña. El perfil aparece al abrir el ícono de persona.
+## Cuentas para la demostración
 
-Las credenciales de ejemplo son solo para la demostración académica. No deben reutilizarse en servicios reales.
+Se incluyen dos cuentas de ejemplo:
 
-## Qué se guarda y dónde
+| Rol | Usuario | Contraseña |
+| --- | --- | --- |
+| Administración | `admin` | `admin1234+` |
+| Persona usuaria | `usuario` | `user123` |
 
-- **`localStorage`:** datos locales de la aplicación, incluidas cuentas de demostración registradas, reportes enviados, reacciones y cambios administrativos. Se conservan al cerrar la pestaña en el mismo navegador y origen.
-- **`sessionStorage`:** los datos de la sesión iniciada. Se usan para reconocer el acceso en la pestaña actual y se borran al cerrar sesión; el navegador también los elimina al terminar esa sesión de pestaña.
+Una cuenta nueva se crea desde Registro. Después se inicia sesión usando la cédula y la contraseña elegidas. El menú del ícono de persona muestra los datos del perfil y la opción de cerrar sesión.
+
+Estas credenciales son solo para la demostración del curso. No reutilices esas contraseñas en otros servicios.
+
+## Datos y almacenamiento
+
+- **`data/reportes.json`:** contiene reportes iniciales de ejemplo. El navegador los lee, pero no modifica el archivo.
+- **`data/ubicaciones-alajuela.json`:** proporciona los cantones y distritos para los selectores dependientes.
+- **`localStorage`:** guarda cuentas registradas, reportes enviados, reacciones y cambios administrativos en el navegador actual.
+- **`sessionStorage`:** guarda la sesión iniciada y el rol durante la sesión de esa pestaña.
 - **Cookies:** el proyecto no crea ni lee cookies.
-- Los 13 reportes iniciales se leen desde `data/reportes.json`; el sitio no modifica ese archivo desde el navegador. Los cambios se superponen desde almacenamiento local.
 
-## Archivos principales
+Los datos guardados no se sincronizan entre personas ni dispositivos. Para limpiar la demostración se pueden borrar los datos del sitio desde el almacenamiento del navegador.
+
+## Organización de archivos
 
 ```text
-index.html                 Inicio y sección Acerca de
-reportes.html              Búsqueda, filtros y detalle
-gestion.html               Formulario, panel de usuario y panel admin
-login.html                 Inicio de sesión
-registro.html              Registro de cuenta
-terminos.html              Términos y condiciones
-css/styles.css             Estilos y diseño adaptable
-JavaScript/app.js          Reportes, filtros, formularios y paneles
-JavaScript/account.js      Registro, acceso, sesión y roles
-JavaScript/utils.js        Funciones compartidas
-data/reportes.json         Reportes de ejemplo
-data/ubicaciones-alajuela.json  Cantones y distritos
-img/                       Imágenes del sitio
-docs/                      Documentos del proyecto
+index.html                         Inicio y sección Acerca de
+reportes.html                      Búsqueda, filtros y detalles
+gestion.html                       Envío de reportes y administración
+login.html                         Inicio de sesión
+registro.html                      Registro de cuentas
+terminos.html                      Términos y condiciones
+css/styles.css                     Estilos y adaptación móvil
+JavaScript/app.js                  Reportes, filtros y formularios
+JavaScript/account.js              Registro, acceso y sesiones
+JavaScript/utils.js                Funciones compartidas
+data/reportes.json                 Reportes iniciales
+data/ubicaciones-alajuela.json     Cantones y distritos
+img/                               Imágenes del sitio
+docs/Daniela_Cano_avance/          PDF del avance actualizado
 ```
 
-## Alcance
+## Diseño y decisiones técnicas
 
-Es un prototipo de clase y funciona en el navegador donde se usa. No tiene backend ni base de datos compartida; por eso los datos no se sincronizan entre personas o dispositivos. El control de roles y el hash de contraseña se implementan en el cliente y sirven para practicar el flujo, no para proteger cuentas reales. El sitio tampoco reemplaza los canales oficiales ni el 9-1-1.
+El sitio adapta la navegación, las tarjetas y los formularios a pantallas de escritorio y teléfono. Las imágenes conservan su proporción dentro de las tarjetas. Los campos tienen etiquetas y mensajes de validación; los botones indican sus acciones y los textos ingresados se escapan antes de agregarse a la página.
+
+Los avisos del sistema se muestran con elementos propios del proyecto. No se usa Toastify ni otra biblioteca de notificaciones.
+
+## Alcance del prototipo
+
+Este es un proyecto académico de frontend. No tiene backend ni base de datos central: el almacenamiento y el control de roles ocurren en el navegador y sirven para demostrar el flujo de la aplicación, no para ofrecer autenticación segura. La contraseña de una cuenta registrada se guarda como un hash generado en el navegador, pero eso no convierte el sitio en un sistema seguro para cuentas reales.
+
+Reportes Alajuela tampoco reemplaza los canales oficiales de atención ni el 9-1-1 ante una emergencia.
